@@ -1,0 +1,27 @@
+------------------
+Image Processing 6112
+------------------
+- Using Otsu's threshold, binarize image.
+- Get connected components. Compute average size.
+- Eliminate components that are outliers to average size.
+	- Note: This imposes the constraint that text must be written in similar size in entire image.
+			We may want to eliminate this step and handle extraneous components during post-processing.
+- Look through each component from top-left to bottom-right.
+	- From left to right, try to link together components that occupies similar row space.
+		These form a "line".
+- Iterate through each line's components:
+	- From left to right, look for gaps between components that are significant. This gap size is determined
+		by global component statistics. We now have "words"
+- For each word:
+	- Look for columns with no FG pixels. Split here.
+
+For each segmented cluster:
+	Classify as character. Link association with word and line for speech synthesis.
+	
+	
+	
+	
+Update: 4/12/2018:
+- Puncuation isolation (look for periods, prune out any small components above
+XXX Touching separation: Top-down profile check for steep valleys for extra wide bboxes
+- Image preprocessing- Noise/Lighting thresholding in real paper handwritten documents

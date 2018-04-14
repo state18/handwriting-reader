@@ -1,0 +1,20 @@
+Pipeline:
+
+Handwriting recognition
+	1) Isolate text:
+		- Perform FG segmentation.
+		- We assume we can encompass the entirely of the text in one bounding box.
+	2) Divide bounding box horizontally depending on foreground placement.
+		- We cannot handle text that is sporatically placed.
+	3) Vertical segmentation based on word.
+
+	4) Vertical segmentation based on character.
+
+	5) Character recognition
+
+Text to speech
+	1) Likely use third party library for this
+
+Answering a question (if applicable)
+	1) Identify if question (question mark or keywords when/why/how etc...)
+	2) ???
